@@ -580,16 +580,19 @@ public class PlayerInfo {
         }
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         lore.add("&7"+format.format(new Date()));
-        lore.add("游戏模式: &a"+levelName);
-
         lore.add(" ");
+        lore.add("地图: &a"+levelName);
+
         if(isWait){
-            lore.add("玩家数: &a"+gameRoom.getPlayerInfos().size()+" &r/&a "+gameRoom.getRoomConfig().getMaxPlayerSize());
-            lore.add("等待中....");
+            lore.add("玩家: &a"+gameRoom.getPlayerInfos().size()+" &r/&a "+gameRoom.getRoomConfig().getMaxPlayerSize());
+            lore.add(" ");
+            lore.add("等待中");
+            lore.add("以允许更多");
+            lore.add("玩家加入");
             lore.add("   ");
 
         }else{
-
+            lore.add(" ");
             lore.add("游戏结束: &a"+formatTime(getGameRoom().loadTime));
             if(gameRoom.roomConfig.teamConfigs.size() > 1){
                 for(TeamInfo teamInfo: gameRoom.getTeamInfos()){
@@ -597,17 +600,13 @@ public class PlayerInfo {
                     if(getTeamInfo() != null && getTeamInfo().equals(teamInfo)){
                         me = "&7(我)";
                     }
-                    lore.add("◎ "+ teamInfo +": &r  &c"+teamInfo.getLivePlayer().size()+" "+me);
+                    lore.add(teamInfo +": &r  &c"+teamInfo.getLivePlayer().size()+" "+me);
                 }
             }else{
                 TeamInfo teamInfo = gameRoom.getTeamInfos().get(0);
                 lore.add("   ");
-                lore.add(" 存活人数: &a "+teamInfo.getLivePlayer().size() +" &7/&a "+teamInfo.getTeamPlayers().size());
+                lore.add("存活的玩家: &a "+teamInfo.getLivePlayer().size());
             }
-
-            lore.add("      ");
-            lore.add("&b击杀数: &a"+killCount);
-            lore.add("&e助攻数: &a"+assists);
 
             lore.add("        ");
         }
