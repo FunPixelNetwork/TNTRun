@@ -1,3 +1,7 @@
 # TNT Run
 
-TNT跑酷
+TNT Run Plugin For FunPixel
+author: SoBadFish
+Command:
+/tr Default Command
+/tra Admin Command
