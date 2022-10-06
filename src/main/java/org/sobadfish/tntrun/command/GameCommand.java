@@ -27,7 +27,7 @@ import org.sobadfish.tntrun.room.config.GameRoomConfig;
 public class GameCommand extends Command {
 
     public GameCommand(String name) {
-        super(name,"游戏房间");
+        super(name,"TNTRUN Command");
     }
 
 
